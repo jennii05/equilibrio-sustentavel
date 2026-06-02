@@ -3,107 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroForte Dashboard | Equilíbrio Sustentável</title>
+    <title>AgroForte Interativo | Soluções Sustentáveis</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="glow-bg"></div>
     
     <header>
-        <div class="badge">🌱 ECO-CONSCIENTE</div>
+        <div class="badge-fun">🚀 AGROTECNOLOGIA EM AÇÃO</div>
         <h1>Agro<span class="highlight">Forte</span></h1>
-        <p class="subtitle">Plataforma de inteligência ecológica e alta produtividade no campo.</p>
+        <p class="subtitle">Descubra soluções inteligentes e divertidas para o campo!</p>
     </header>
 
     <main>
-        <!-- SEÇÃO: CALCULADORA INTERATIVA -->
-        <section class="glass-card calculator-box">
-            <h2>Simulador de Impacto AgroForte</h2>
-            <p>Insira a área do seu plantio para calcular a otimização ecológica estimada:</p>
+        <!-- SEÇÃO 1: SIMULADOR INTERATIVO -->
+        <section class="glass-card main-box">
+            <h2>🎮 Simulador Gamer de Impacto</h2>
+            <p>Mova a barra abaixo e veja a mágica acontecer no seu ecossistema:</p>
             
-            <div class="input-group">
-                <input type="number" id="hectares" value="50" min="1" placeholder="Ex: 50">
-                <span class="unit">Hectares (ha)</span>
+            <div class="slider-container">
+                <input type="range" id="hectares-slider" min="5" max="500" value="50" class="modern-slider">
+                <div class="slider-badge"><span id="slider-val">50</span> ha</div>
             </div>
 
             <div class="results-grid">
-                <div class="result-card">
+                <div class="result-card neon-blue">
                     <span class="icon">💧</span>
                     <div class="result-data">
                         <h4 id="agua-val">150.000 L</h4>
-                        <p>Água economizada/mês</p>
+                        <p>Água Poupada/Mês</p>
                     </div>
                 </div>
-                <div class="result-card">
-                    <span class="icon">💨</span>
+                <div class="result-card neon-green">
+                    <span class="icon">🛸</span>
                     <div class="result-data">
                         <h4 id="co2-val">1.250 kg</h4>
-                        <p>CO₂ mitigado/ano</p>
+                        <p>CO₂ Evitado/Ano</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO: METAS DO PROJETO -->
-        <section class="glass-card progression-box">
-            <div class="progress-header">
-                <h2>Meta Global AgroForte 2026</h2>
-                <span class="percentage">74%</span>
-            </div>
-            <div class="progress-bar-container">
-                <div class="progress-bar-fill"></div>
-            </div>
-            <p class="progress-desc">Já poupamos o equivalente a 140 piscinas olímpicas de água este ano.</p>
-        </section>
+        <!-- SEÇÃO 2: 5 SOLUÇÕES INTERATIVAS (CLIQUE E ABRA) -->
+        <section class="glass-card faq-box">
+            <h2>💡 Central de Soluções AgroForte</h2>
+            <p>Clique nas perguntas abaixo para revelar nossas estratégias práticas:</p>
 
-        <!-- SEÇÃO: OS PILARES EM GRID MODERNIZADO -->
-        <section class="features-grid">
-            <div class="feature-item">
-                <div class="feature-icon">🌾</div>
-                <h3>Manejo Regenerativo</h3>
-                <p>Monitoramento e inteligência artificial para a recomposição de nutrientes do solo.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🛰️</div>
-                <h3>Irrigação de Precisão</h3>
-                <p>Análise via satélite que calcula a umidade exata eliminando desperdícios.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">📊</div>
-                <h3>Créditos de Carbono</h3>
-                <p>Transforme sua preservação ambiental em ativos financeiros certificados.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🔋</div>
-                <h3>Algoritmo Verde</h3>
-                <p>Sistemas otimizados que rodam consumindo o mínimo de energia e bateria do servidor.</p>
+            <div class="accordion">
+                <!-- Solução 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>🌱 1. Como reduzir o uso de agrotóxicos sem perder a colheita?</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p><strong>A Solução: Manejo Biológico Integrado.</strong> Nós inserimos "insetos do bem" (predadores naturais) e bioinsumos no momento exato mapeado por nossos drones. Isso reduz a dependência química em até 60% e regenera a vida microscópica do solo.</p>
+                    </div>
+                </div>
+
+                <!-- Solução 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>💧 2. O que fazer quando a conta de água da irrigação está altíssima?</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p><strong>A Solução: Gotejamento Subterrâneo Inteligente.</strong> Em vez de pulverizar água no ar (onde metade evapora com o sol), instalamos tubos subterrâneos que alimentam a raiz direto na boca. Sensores IoT liberam a umidade exata apenas quando o solo pede.</p>
+                    </div>
+                </div>
+
+                <!-- Solução 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>🚜 3. Como o maquinário pesado pode parar de compactar e estragar o solo?</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p><strong>A Solução: Tráfego Controlado por GPS Autônomo.</strong> Criamos "rodovias fixas" digitais dentro da fazenda. Tratores e colheitadeiras passam rigorosamente sempre pelo mesmo rastro milimétrico. Resultado: 85% da área do seu plantio fica totalmente livre de compactação.</p>
+                    </div>
+                </div>
+
+                <!-- Solução 4 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>☀️ 4. Falta de energia na fazenda atrasa tudo. Como resolver limpamente?</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p><strong>A Solução: Microredes Agro-Solares Integradas.</strong> Instalamos painéis solares sobre canais de irrigação (o que reduz a evaporação da água e resfria os painéis, aumentando a eficiência deles). A fazenda gera sua própria energia e fica imune a apagões.</p>
+                    </div>
+                </div>
+
+                <!-- Solução 5 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>📊 5. Como provar que meu produto é sustentável e ganhar mais por isso?</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p><strong>A Solução: Rastreabilidade Verde em Blockchain.</strong> Geramos um QR Code exclusivo para a sua colheita. Quando o comprador final escaneia, ele vê todo o histórico do produto: fotos do satélite, quantidade de água economizada e o selo de Carbono Neutro garantido por código.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 AgroForte Engine. Código limpo, carregamento ultrarrápido.</p>
+        <p>Desenvolvido com 💚 para o ecossistema AgroForte.</p>
     </footer>
 
-    <!-- SCRIPT DA CALCULADORA INTERATIVA -->
+    <!-- LOGICA INTERATIVA (JAVASCRIPT) -->
     <script>
-        const inputHectares = document.getElementById('hectares');
+        // Lógica do Simulador Slider
+        const slider = document.getElementById('hectares-slider');
+        const sliderVal = document.getElementById('slider-val');
         const aguaVal = document.getElementById('agua-val');
         const co2Val = document.getElementById('co2-val');
 
-        function calcularImpacto() {
-            let ha = parseFloat(inputHectares.value) || 0;
+        slider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            sliderVal.innerText = val;
             
-            // Cálculos simulados
-            let litrosEconomizados = ha * 3000;
-            let co2Mitigado = ha * 25;
+            // Cálculos dinâmicos divertidos
+            aguaVal.innerText = (val * 3000).toLocaleString('pt-BR') + " L";
+            co2Val.innerText = (val * 25).toLocaleString('pt-BR') + " kg";
+        });
 
-            // Formatação bonita dos números
-            aguaVal.innerText = litrosEconomizados.toLocaleString('pt-BR') + " L";
-            co2Val.innerText = co2Mitigado.toLocaleString('pt-BR') + " kg";
-        }
+        // Lógica das Perguntas (Acordeão)
+        const accHeaders = document.querySelectorAll('.accordion-header');
+        
+        accHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                // Fecha outros que estiverem abertos (opcional, cria efeito sanfona)
+                accHeaders.forEach(other => {
+                    if(other !== header) {
+                        other.classList.remove('active');
+                        other.nextElementSibling.style.maxHeight = null;
+                    }
+                });
 
-        inputHectares.addEventListener('input', calcularImpacto);
+                // Alterna o atual
+                this.classList.toggle('active');
+                const body = this.nextElementSibling;
+                
+                if (this.classList.contains('active')) {
+                    body.style.maxHeight = body.scrollHeight + "px";
+                } else {
+                    body.style.maxHeight = null;
+                }
+            });
+        });
     </script>
 </body>
 </html>
+
