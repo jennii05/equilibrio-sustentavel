@@ -3,58 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroForte | Equilíbrio Sustentável</title>
+    <title>AgroForte Dashboard | Equilíbrio Sustentável</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="glow-bg"></div>
+    
     <header>
-        <div class="logo">🚜 AgroForte</div>
-        <h1>Equilíbrio Sustentável no Campo</h1>
-        <p>Alta produtividade agrícola em perfeita harmonia com o meio ambiente.</p>
+        <div class="badge">🌱 ECO-CONSCIENTE</div>
+        <h1>Agro<span class="highlight">Forte</span></h1>
+        <p class="subtitle">Plataforma de inteligência ecológica e alta produtividade no campo.</p>
     </header>
 
     <main>
-        <section class="hero-stats">
-            <div class="stat-item">
-                <span class="stat-number">+Produtividade</span>
-                <span class="stat-label">Otimização máxima</span>
+        <!-- SEÇÃO: CALCULADORA INTERATIVA -->
+        <section class="glass-card calculator-box">
+            <h2>Simulador de Impacto AgroForte</h2>
+            <p>Insira a área do seu plantio para calcular a otimização ecológica estimada:</p>
+            
+            <div class="input-group">
+                <input type="number" id="hectares" value="50" min="1" placeholder="Ex: 50">
+                <span class="unit">Hectares (ha)</span>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number">-Impacto</span>
-                <span class="stat-label">Pegada de carbono mínima</span>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <span class="icon">💧</span>
+                    <div class="result-data">
+                        <h4 id="agua-val">150.000 L</h4>
+                        <p>Água economizada/mês</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <span class="icon">💨</span>
+                    <div class="result-data">
+                        <h4 id="co2-val">1.250 kg</h4>
+                        <p>CO₂ mitigado/ano</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="card">
-            <h2>🌱 O Compromisso AgroForte</h2>
-            <p>Nossa missão é otimizar o ecossistema agrícola através de dados inteligentes. Reduzimos o desperdício de recursos naturais e mitigamos o impacto ambiental desde a linha de código até a colheita no campo.</p>
+        <!-- SEÇÃO: METAS DO PROJETO -->
+        <section class="glass-card progression-box">
+            <div class="progress-header">
+                <h2>Meta Global AgroForte 2026</h2>
+                <span class="percentage">74%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <p class="progress-desc">Já poupamos o equivalente a 140 piscinas olímpicas de água este ano.</p>
         </section>
 
-        <section class="grid">
-            <div class="card-mini">
-                <h3>🌾 Manejo Regenerativo</h3>
-                <p>Monitoramento inteligente para conservação e saúde do solo a longo prazo.</p>
+        <!-- SEÇÃO: OS PILARES EM GRID MODERNIZADO -->
+        <section class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🌾</div>
+                <h3>Manejo Regenerativo</h3>
+                <p>Monitoramento e inteligência artificial para a recomposição de nutrientes do solo.</p>
             </div>
-            <div class="card-mini">
-                <h3>💧 Eficiência Hídrica</h3>
-                <p>Algoritmos focados no cálculo do consumo exato de água para irrigação.</p>
+            <div class="feature-item">
+                <div class="feature-icon">🛰️</div>
+                <h3>Irrigação de Precisão</h3>
+                <p>Análise via satélite que calcula a umidade exata eliminando desperdícios.</p>
             </div>
-            <div class="card-mini">
-                <h3>📊 Carbono Neutro</h3>
-                <p>Rastreamento digital e transparente das emissões da produção agrícola.</p>
+            <div class="feature-item">
+                <div class="feature-icon">📊</div>
+                <h3>Créditos de Carbono</h3>
+                <p>Transforme sua preservação ambiental em ativos financeiros certificados.</p>
             </div>
-            <div class="card-mini">
-                <h3>⚡ Código Eco-Eficiente</h3>
-                <p>Interface ultra-leve que consome menos energia e bateria dos dispositivos.</p>
+            <div class="feature-item">
+                <div class="feature-icon">🔋</div>
+                <h3>Algoritmo Verde</h3>
+                <p>Sistemas otimizados que rodam consumindo o mínimo de energia e bateria do servidor.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 AgroForte. Hospedado com eficiência energética via GitHub Pages.</p>
+        <p>&copy; 2026 AgroForte Engine. Código limpo, carregamento ultrarrápido.</p>
     </footer>
+
+    <!-- SCRIPT DA CALCULADORA INTERATIVA -->
+    <script>
+        const inputHectares = document.getElementById('hectares');
+        const aguaVal = document.getElementById('agua-val');
+        const co2Val = document.getElementById('co2-val');
+
+        function calcularImpacto() {
+            let ha = parseFloat(inputHectares.value) || 0;
+            
+            // Cálculos simulados
+            let litrosEconomizados = ha * 3000;
+            let co2Mitigado = ha * 25;
+
+            // Formatação bonita dos números
+            aguaVal.innerText = litrosEconomizados.toLocaleString('pt-BR') + " L";
+            co2Val.innerText = co2Mitigado.toLocaleString('pt-BR') + " kg";
+        }
+
+        inputHectares.addEventListener('input', calcularImpacto);
+    </script>
 </body>
 </html>
-
-
