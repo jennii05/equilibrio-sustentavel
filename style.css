@@ -1,136 +1,126 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
+// Banco de dados de perguntas do Quiz
+const quizData = [
+    {
+        question: "Como os drones ajudam a proteger as plantações de forma sustentável?",
+        options: [
+            "Jogando água em toda a fazenda ao mesmo tempo.",
+            "Tirando fotos com IA para aplicar remédio apenas na planta que está doente.",
+            "Espantando os passarinhos para longe da plantação."
+        ],
+        correct: 1 // Índice da resposta certa (começa em 0)
+    },
+    {
+        question: "Qual é a principal vantagem da energia solar para o produtor rural?",
+        options: [
+            "Ela faz as plantas crescerem duas vezes mais rápido.",
+            "Substitui a energia elétrica poluente por uma limpa e infinita vinda do Sol.",
+            "Serve para iluminar a fazenda somente durante o dia."
+        ],
+        correct: 1
+    },
+    {
+        question: "O que acontece quando o agricultor usa sensores de umidade no solo?",
+        options: [
+            "Ele economiza muita água, pois irriga apenas quando a terra realmente precisa.",
+            "O solo fica mudando de cor de acordo com a temperatura.",
+            "As plantas ganham raízes automáticas."
+        ],
+        correct: 0
+    },
+    {
+        question: "De onde vem o biogás utilizado como combustível ecológico no campo?",
+        options: [
+            "Da fumaça gerada pelos tratores antigos.",
+            "Do reaproveitamento de restos de vegetais e do esterco dos animais.",
+            "Das nuvens de chuva acumuladas."
+        ],
+        correct: 1
+    }
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+// Elementos DOM
+const gameContainer = document.querySelector('.game-container');
+const questionText = document.getElementById('question-text');
+const optionsBox = document.getElementById('options-box');
+const currentQuestionEl = document.getElementById('current-question');
+const totalQuestionsEl = document.getElementById('total-questions');
+const scoreVal = document.getElementById('score-val');
+const nextBtn = document.getElementById('next-btn');
+const endScreen = document.getElementById('end-screen');
+const finalScoreVal = document.getElementById('final-score-val');
+const restartBtn = document.getElementById('restart-btn');
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    scoreVal.textContent = score;
+    totalQuestionsEl.textContent = quizData.length;
+    endScreen.classList.add('hide');
+    gameContainer.classList.remove('hide');
+    showQuestion();
 }
 
-body {
-    background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 100%); /* Fundo degradê suave verde/azul */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+function showQuestion() {
+    resetState();
+    let currentQuestion = quizData[currentQuestionIndex];
+    currentQuestionEl.textContent = currentQuestionIndex + 1;
+    questionText.textContent = currentQuestion.question;
+
+    // Criar os botões de resposta na tela
+    currentQuestion.options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.classList.add('option-btn');
+        button.addEventListener('click', () => selectOption(button, index));
+        optionsBox.appendChild(button);
+    });
 }
 
-.game-container, .end-container {
-    background: #ffffff;
-    width: 100%;
-    max-width: 600px;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+function resetState() {
+    nextBtn.classList.add('hide');
+    optionsBox.innerHTML = '';
 }
 
-/* Placar superior */
-.game-header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 700;
-    color: #1e3a8a;
-    margin-bottom: 25px;
-    font-size: 1.1rem;
+function selectOption(selectedButton, index) {
+    const currentQuestion = quizData[currentQuestionIndex];
+    const allButtons = optionsBox.querySelectorAll('.option-btn');
+
+    // Bloquear outros cliques após responder
+    allButtons.forEach(btn => btn.disabled = true);
+
+    // Validação de resposta certa ou errada
+    if (index === currentQuestion.correct) {
+        selectedButton.classList.add('correct');
+        score += 10;
+        scoreVal.textContent = score;
+    } else {
+        selectedButton.classList.add('wrong');
+        // Mostrar qual era a certa para ensinar o usuário
+        allButtons[currentQuestion.correct].classList.add('correct');
+    }
+
+    nextBtn.classList.remove('hide');
 }
 
-.score {
-    color: #15803d;
-    background: #dcfce7;
-    padding: 4px 12px;
-    border-radius: 20px;
+nextBtn.addEventListener('click', () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizData.length) {
+        showQuestion();
+    } else {
+        showEndScreen();
+    }
+});
+
+function showEndScreen() {
+    gameContainer.classList.add('hide');
+    endScreen.classList.remove('hide');
+    finalScoreVal.textContent = score;
 }
 
-/* Pergunta */
-#question-text {
-    font-size: 1.3rem;
-    color: #1e293b;
-    margin-bottom: 25px;
-    line-height: 1.4;
-}
+restartBtn.addEventListener('click', startQuiz);
 
-/* Botões de Resposta */
-.options-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.option-btn {
-    background: #f8fafc;
-    border: 2px solid #e2e8f0;
-    padding: 16px 20px;
-    border-radius: 12px;
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #334155;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.option-btn:hover:not([disabled]) {
-    background: #f1f5f9;
-    border-color: #cbd5e1;
-    transform: translateY(-2px);
-}
-
-/* Estados de Acerto e Erro */
-.option-btn.correct {
-    background: #dcfce7 !important;
-    border-color: #22c55e !important;
-    color: #15803d !important;
-    font-weight: 700;
-}
-
-.option-btn.wrong {
-    background: #fee2e2 !important;
-    border-color: #ef4444 !important;
-    color: #991b1b !important;
-}
-
-/* Botão Avançar */
-.game-footer {
-    margin-top: 25px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.btn-next, .btn-restart {
-    background: #22c55e;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background 0.2s;
-}
-
-.btn-next:hover, .btn-restart:hover {
-    background: #16a34a;
-}
-
-/* Tela Final */
-.end-container {
-    text-align: center;
-}
-
-.trophy-icon {
-    font-size: 4rem;
-    color: #eab308;
-    margin-bottom: 15px;
-}
-
-.final-score {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #15803d;
-    margin: 20px 0;
-}
-
-/* Classes utilitárias */
-.hide { display: none !important; }
+// Iniciar o jogo automaticamente na tela
+startQuiz();
