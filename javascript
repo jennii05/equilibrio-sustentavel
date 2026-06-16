@@ -12,27 +12,23 @@ document.addEventListener('DOMContentLoaded', () => {
     calcBtn.addEventListener('click', () => {
         const area = parseFloat(areaInput.value);
 
-        // Alerta caso insira algum valor inválido
         if (isNaN(area) || area <= 0) {
             alert('Por favor, digite um número válido de hectares! 🌾🧑‍🌾');
             return;
         }
 
-        // Multiplicadores fictícios calculados por hectare para a simulação
-        const calculoAgua = area * 15000;    // 15.000 Litros economizados por Hectare
-        const calculoCarbono = area * 320;   // 320 Kg de CO2 retidos por Hectare
-        const calculoAdubo = area * 95;      // 95 Kg de defensivos químicos evitados
+        const calculoAgua = area * 15000;    
+        const calculoCarbono = area * 320;   
+        const calculoAdubo = area * 95;      
 
-        // Transfere os valores formatados com pontos de milhar para as caixas
         resAgua.textContent = calculoAgua.toLocaleString('pt-BR');
         resCarbono.textContent = calculoCarbono.toLocaleString('pt-BR');
         resAdubo.textContent = calculoAdubo.toLocaleString('pt-BR');
 
-        // Torna a caixa de resultados visível aplicando animação
         resultBox.classList.remove('hide');
     });
 
-    // === 2. LÓGICA DAS PERGUNTAS EXPANSÍVEIS (ACCORDION) ===
+    // === 2. LÓGICA CORRIGIDA DAS PERGUNTAS EXPANSÍVEIS (ACCORDION) ===
     const accordionBtns = document.querySelectorAll('.accordion-btn');
 
     accordionBtns.forEach(btn => {
@@ -40,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentItem = btn.parentElement;
             const isOpen = currentItem.classList.contains('open');
 
-            // Fecha todas as abas abertas para manter o site elegante e limpo
+            // 1. Fecha todas as outras abas para o site ficar organizado
             document.querySelectorAll('.accordion-item').forEach(item => {
                 item.classList.remove('open');
             });
 
-            // Se o bloco clicado estava fechado, ele abre
+            // 2. Se a aba clicada estava fechada, adiciona a classe 'open' para abrir
             if (!isOpen) {
                 currentItem.classList.add('open');
             }
