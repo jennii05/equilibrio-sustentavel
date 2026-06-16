@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleciona todos os botões de perguntas da tela
-    const questions = document.querySelectorAll('.quiz-question');
+    // Captura todas as perguntas da seção faq
+    const faqQuestions = document.querySelectorAll('.faq-question');
 
-    questions.forEach(button => {
-        button.addEventListener('click', () => {
-            const currentItem = button.parentElement;
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const currentItem = question.parentElement;
             const isActive = currentItem.classList.contains('active');
 
-            // Fecha todas as perguntas antes de abrir a nova (opcional, deixa mais limpo)
-            document.querySelectorAll('.quiz-item').forEach(item => {
+            // Linha opcional: Fecha qualquer outra aba aberta ao clicar em uma nova
+            document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
             });
 
-            // Se o item clicado não estava ativo, ele abre
+            // Se o item clicado não estava aberto, ele abre agora
             if (!isActive) {
                 currentItem.classList.add('active');
             }
