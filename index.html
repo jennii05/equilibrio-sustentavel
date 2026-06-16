@@ -3,102 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho: O Futuro do Agro Sustentável</title>
+    <title>Portal AgroSustentável - Inovação no Campo</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ícones para dar acabamento visual profissional -->
+    <!-- Biblioteca de Ícones Dinâmicos -->
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
 
-    <!-- Menu de Navegação Superior -->
+    <!-- 1. BARRA DE NAVEGAÇÃO SUPERIOR -->
     <nav class="navbar">
-        <div class="nav-logo">
-            <i class="fa-solid fa-leaf"></i> Agro<span>Sustentável</span>
-        </div>
+        <div class="nav-logo">🌾 Agro<span>Futuro</span></div>
         <ul class="nav-links">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre o Agro</a></li>
-            <li><a href="#duvidas">Dúvidas Frequentes</a></li>
+            <li><a href="#inicio">👋 Início</a></li>
+            <li><a href="#pilares">🛡️ Pilares</a></li>
+            <li><a href="#calculadora">🧮 Calculadora</a></li>
+            <li><a href="#tecnologias">🚀 Inovações</a></li>
+            <li><a href="#perguntas">❓ Perguntas</a></li>
         </ul>
     </nav>
 
-    <!-- Seção de Abertura (Banner) -->
+    <!-- 2. BANNER INICIAL CHAMATIVO (HERO) -->
     <header id="inicio" class="hero-section">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Tecnologia e Natureza Conectadas</h1>
-            <p>Descubra como as inovações digitais estão transformando o campo e garantindo o alimento das próximas gerações com respeito ao meio ambiente.</p>
-            <a href="#duvidas" class="btn-primary">Saiba Mais <i class="fa-solid fa-arrow-down"></i></a>
+            <span class="badge-top">⭐ Projeto Agrinho 2026</span>
+            <h1>A Revolução Verde Começa Aqui! 🚜💚</h1>
+            <p>Descubra como a tecnologia digital e a sustentabilidade se unem para alimentar o mundo sem esgotar o nosso planeta. Navegue pelo nosso portal e veja o amanhã acontecer agora!</p>
+            <div class="hero-buttons">
+                <a href="#calculadora" class="btn-main pulse-btn">🧮 Testar Calculadora</a>
+                <a href="#pilares" class="btn-sec">Saber Mais <i class="fa-solid fa-arrow-down"></i></a>
+            </div>
         </div>
     </header>
 
-    <!-- Seção sobre o Agronegócio Moderno -->
-    <section id="sobre" class="about-section">
-        <h2>O Novo Agronegócio</h2>
-        <p class="section-subtitle">A união entre produtividade e preservação ambiental.</p>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fa-solid fa-droplet text-green"></i>
-                <h3>Uso da Água</h3>
-                <p>Sensores inteligentes medem a umidade exata do solo para que nenhuma gota de água seja desperdiçada na irrigação.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-solar-panel text-green"></i>
-                <h3>Energia Limpa</h3>
-                <p>Fazendas modernas geram a própria eletricidade através de painéis solares e do reaproveitamento de biomassa.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-seedling text-green"></i>
-                <h3>Proteção do Solo</h3>
-                <p>O plantio direto e a rotação de culturas evitam a erosão e mantêm a terra fértil por muito mais tempo.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Interativa de Perguntas e Respostas (O que você pediu) -->
-    <section id="duvidas" class="faq-section">
-        <h2>Dúvidas Frequentes</h2>
-        <p class="section-subtitle">Clique sobre qualquer pergunta para expandir e ler a resposta detalhada.</p>
-
-        <div class="faq-container">
-            <!-- Item 1 -->
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Como a tecnologia ajuda a reduzir o uso de defensivos químicos?</span>
-                    <i class="fa-solid fa-plus faq-icon"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Através do uso de drones com inteligência artificial e câmeras especiais. Os drones sobrevoam a plantação e mapeiam exatamente onde estão os focos de pragas ou doenças. Com isso, o produtor aplica o produto de forma localizada apenas nas plantas afetadas, reduzindo drasticamente o uso geral de insumos no campo.</p>
+    <!-- 3. SEÇÃO DE PILARES SUSTENTÁVEIS -->
+    <section id="pilares" class="section-padding section-light">
+        <div class="container">
+            <span class="section-tag">🌍 Missão Ambiental</span>
+            <h2 class="section-title">Os 3 Pilares do Agro Sustentável 🛡️</h2>
+            <p class="section-subtitle">Entenda as bases que protegem o nosso ecossistema e garantem o futuro do campo.</p>
+            
+            <div class="grid-cards">
+                <div class="card-pilar color-1">
+                    <div class="card-icon">💧</div>
+                    <h3>Gestão de Água</h3>
+                    <p>Uso inteligente de irrigação por gotejamento e sensores subterrâneos. Economia extrema para as bacias hidrográficas.</p>
                 </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>O que é a Agricultura de Precisão e qual o seu impacto?</span>
-                    <i class="fa-solid fa-plus faq-icon"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>É um sistema de gerenciamento que utiliza dados coletados por GPS, tratores autônomos e satélites para entender as variações do solo em cada pedaço da propriedade. O impacto é uma lavoura muito mais eficiente, que produz mais alimentos usando menos recursos naturais e espaço de terra.</p>
+                <div class="card-pilar color-2">
+                    <div class="card-icon">☀️</div>
+                    <h3>Energia Renovável</h3>
+                    <p>Substituição de geradores a diesel por placas solares e biogás gerado através de resíduos orgânicos da própria fazenda.</p>
                 </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>Qual o papel do Programa Agrinho no futuro do campo?</span>
-                    <i class="fa-solid fa-plus faq-icon"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>O Programa Agrinho atua na educação e conscientização de crianças e jovens, levando temas como cidadania, ética e sustentabilidade para a sala de aula. Ele prepara as novas gerações para pensar em soluções criativas, conectando o conhecimento escolar com a realidade prática e tecnológica do agronegócio sustentável.</p>
+                <div class="card-pilar color-3">
+                    <div class="card-icon">🪱</div>
+                    <h3>Saúde do Solo</h3>
+                    <p>Rotação de culturas e adubação orgânica para manter a terra rica em micro-organismos, evitando a degradação e a erosão.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé Institucional -->
-    <footer class="site-footer">
-        <p>&copy; 2026 Projeto Agrinho - Sustentabilidade no Agro. Todos os direitos reservados.</p>
+    <!-- 4. SEÇÃO DA CALCULADORA INTERATIVA -->
+    <section id="calculadora" class="section-padding section-white">
+        <div class="container">
+            <span class="section-tag">🧮 Ferramenta Prática</span>
+            <h2 class="section-title">Calculadora de Impacto Ecológico 📊</h2>
+            <p class="section-subtitle">Simule o tamanho da sua propriedade e descubra o impacto positivo ao adotar práticas sustentáveis!</p>
+            
+            <div class="calc-card">
+                <div class="input-container">
+                    <label for="area-input">Insira o tamanho da plantação simulada (em Hectares):</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-mountain-sun input-icon"></i>
+                        <input type="number" id="area-input" value="10" min="1" placeholder="Digite um valor...">
+                    </div>
+                </div>
+                
+                <button id="calc-btn" class="btn-action">💥 Calcular Impacto Sustentável</button>
+
+                <!-- Bloco de Resultados Oculto até o Clique -->
+                <div id="result-box" class="result-box hide">
+                    <h3>🎉 Resultados Estimados da Propriedade</h3>
+                    <div class="results-grid">
+                        <div class="result-item res-blue">
+                            <span class="res-emoji">💧</span>
+                            <span class="res-num" id="res-agua">0</span>
+                            <span class="res-label">Litros de água salvos/ano</span>
+                        </div>
+                        <div class="result-item res-green">
+                            <span class="res-emoji">🍃</span>
+                            <span class="res-num" id="res-carbono">0</span>
+                            <span class="res-label">Kg de CO₂ sequestrados</span>
+                        </div>
+                        <div class="result-item res-orange">
+                            <span class="res-emoji">🪵</span>
+                            <span class="res-num" id="res-adubo">0</span>
+                            <span class="res-label">Kg de químicos evitados</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SEÇÃO DE TECNOLOGIAS E INOVAÇÕES -->
+    <section id="tecnologias" class="section-padding section-light">
+        <div class="container">
+            <span class="section-tag">🚀 Próxima Geração</span>
+            <h2 class="section-title">Inovações Tecnológicas no Campo 🤖</h2>
+            <p class="section-subtitle">Veja as ferramentas digitais mais incríveis que estão revolucionando o trabalho rural.</p>
+            
+            <div class="tech-row">
+                <div class="tech-box">
+                    <h3>🛰️ Satélites e GPS Agrícola</h3>
+                    <p>Mapeamento de alta precisão que identifica falhas no crescimento das plantas direto pelo sinal de satélite.</p>
+                </div>
+                <div class="tech-box">
+                    <h3>🛸 Drones Pulverizadores</h3>
+                    <p>Sobrevoam a lavoura aplicando insumos cirurgicamente apenas nas áreas afetadas por pragas, evitando desperdício.</p>
+                </div>
+                <div class="tech-box">
+                    <h3>📱 Aplicativos de Clima em IA</h3>
+                    <p>Previsões meteorológicas refinadas por inteligência artificial que ajudam o agricultor a escolher o melhor dia para plantar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SEÇÃO INTERATIVA DE PERGUNTAS EXPANSÍVEIS -->
+    <section id="perguntas" class="section-padding section-white">
+        <div class="container">
+            <span class="section-tag">❓ Tire Suas Dúvidas</span>
+            <h2 class="section-title">Perguntas Frequentes sobre o Agro 🤔</h2>
+            <p class="section-subtitle">Clique sobre a pergunta de sua escolha para expandir e ler a resposta imediatamente!</p>
+
+            <div class="accordion-holder">
+                <!-- Caixa 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-btn">
+                        <span>🐝 Qual a importância das abelhas no agronegócio?</span>
+                        <i class="fa-solid fa-plus arrow-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>As abelhas são as maiores polinizadoras da natureza! Sem elas, grande parte dos alimentos como frutas, grãos e vegetais sumiria das prateleiras. Proteger as colmeias garante a multiplicação das lavouras de forma natural e ecológica! 🍯🌸</p>
+                    </div>
+                </div>
+
+                <!-- Caixa 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-btn">
+                        <span>💵 O que são e como funcionam os Créditos de Carbono?</span>
+                        <i class="fa-solid fa-plus arrow-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Fazendas que evitam o desmatamento e mantêm florestas nativas absorvem o gás poluente da atmosfera. Essa boa ação é calculada e vira um "crédito", que pode ser vendido para grandes indústrias mundiais, gerando renda verde para o produtor! 🌳💰</p>
+                    </div>
+                </div>
+
+                <!-- Caixa 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-btn">
+                        <span>🤖 A robótica vai tirar o emprego das pessoas no campo?</span>
+                        <i class="fa-solid fa-plus arrow-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Não! A tecnologia muda o perfil do trabalho. Em vez de serviços pesados e perigosos, o trabalhador do campo passa a operar drones, monitorar dados em tablets e gerenciar sistemas integrados, valorizando muito mais a profissão! 📊⚙️</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. RODAPÉ INSTITUCIONAL -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>🌱 Portal AgroFuturo - Desenvolvido para o Concurso Agrinho 2026</p>
+            <span>Conscientização, Tecnologia e Sustentabilidade</span>
+        </div>
     </footer>
 
     <script src="script.js"></script>
