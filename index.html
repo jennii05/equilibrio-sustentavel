@@ -3,121 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho 2026: Futuro Sustentável</title>
+    <title>Agrinho: Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ícones externos para dar um visual profissional -->
+    <!-- Ícones para deixar os botões bonitos -->
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
-    <div class="container">
-        <!-- Menu Lateral -->
-        <aside class="sidebar">
-            <div class="logo">
-                <i class="fa-solid fa-leaf animate-leaf"></i>
-                <h2>Agro<span>Sustentável</span></h2>
+
+    <header class="main-header">
+        <div class="logo">
+            <i class="fa-solid fa-seedling"></i>
+            <h1>Agrinho <span>Sustentável</span></h1>
+        </div>
+        <p>Clique nas dúvidas abaixo para descobrir como a tecnologia transforma o campo!</p>
+    </header>
+
+    <main class="quiz-container">
+        
+        <!-- Pergunta 1 -->
+        <div class="quiz-item">
+            <button class="quiz-question">
+                <span>O que é a agricultura digital e como ela ajuda o planeta?</span>
+                <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            </button>
+            <div class="quiz-answer">
+                <p>É o uso de tecnologia (como sensores e aplicativos) no campo. Ela ajuda o planeta porque mostra ao produtor a quantidade exata de água e adubo que a planta precisa, evitando desperdícios e protegendo o solo!</p>
             </div>
-            <nav>
-                <a href="#" class="active"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
-                <a href="#simulador"><i class="fa-solid fa-sliders"></i> Simulador</a>
-                <a href="#dicas"><i class="fa-solid fa-lightbulb"></i> Dicas Agrinho</a>
-            </nav>
-            <div class="sidebar-footer">
-                <p>Projeto Agrinho 2026</p>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="quiz-item">
+            <button class="quiz-question">
+                <span>Como os drones podem salvar plantações de forma ecológica?</span>
+                <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            </button>
+            <div class="quiz-answer">
+                <p>Os drones sobrevoam a fazenda e tiram fotos especiais com inteligência artificial. Eles encontram exatamente onde estão as pragas. Assim, o agricultor aplica remédio apenas naquela plantinha doente, e não na fazenda inteira!</p>
             </div>
-        </aside>
+        </div>
 
-        <!-- Conteúdo Principal -->
-        <main class="main-content">
-            <header>
-                <h1>Painel de Controle Eco-Agro</h1>
-                <button id="theme-toggle"><i class="fa-solid fa-moon"></i> Alternar Tema</button>
-            </header>
+        <!-- Pergunta 3 -->
+        <div class="quiz-item">
+            <button class="quiz-question">
+                <span>De onde vem a energia limpa usada nas fazendas do futuro?</span>
+                <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            </button>
+            <div class="quiz-answer">
+                <p>Elas usam principalmente a energia do sol (placas solares) e o biogás, que é feito a partir do reaproveitamento de restos de plantas e esterco de animais. É energia infinita que não polui!</p>
+            </div>
+        </div>
 
-            <!-- Cartões de Status Interativos -->
-            <section class="cards-grid">
-                <div class="card">
-                    <div class="card-icon water"><i class="fa-solid fa-droplet"></i></div>
-                    <div class="card-info">
-                        <h3>Economia de Água</h3>
-                        <p id="water-saved">15.400 Litros</p>
-                        <span>Irrigação Inteligente Ativa</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-icon carbon"><i class="fa-solid fa-cloud"></i></div>
-                    <div class="card-info">
-                        <h3>Créditos de Carbono</h3>
-                        <p id="carbon-credits">42.8 CO₂e</p>
-                        <span>Sequestro de carbono positivo</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-icon energy"><i class="fa-solid fa-solar-panel"></i></div>
-                    <div class="card-info">
-                        <h3>Energia Limpa</h3>
-                        <p id="energy-gen">85%</p>
-                        <span>Matriz solar e biomassa</span>
-                    </div>
-                </div>
-            </section>
+        <!-- Pergunta 4 -->
+        <div class="quiz-item">
+            <button class="quiz-question">
+                <span>O que são os créditos de carbono no agronegócio?</span>
+                <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            </button>
+            <div class="quiz-answer">
+                <p>Quando uma fazenda planta árvores ou cuida bem da floresta, ela ajuda a limpar o ar do planeta. Essa boa ação vira um "crédito de carbono", que pode ser vendido para empresas do mundo todo, gerando lucro sustentável.</p>
+            </div>
+        </div>
 
-            <!-- Seção do Simulador Interativo -->
-            <section id="simulador" class="simulator-section">
-                <h2><i class="fa-solid fa-gears"></i> Simulador de Impacto Sustentável</h2>
-                <p>Ative ou desative as tecnologias abaixo para ver o impacto ambiental e financeiro estimado na fazenda em tempo real!</p>
-                
-                <div class="controls-container">
-                    <div class="control-switch">
-                        <label class="switch">
-                            <input type="checkbox" id="toggle-solar" checked>
-                            <span class="slider round"></span>
-                        </label>
-                        <div class="switch-label">
-                            <span class="title">Painéis Solares Fotovoltaicos</span>
-                            <span class="desc">Substitui energia convencional por solar.</span>
-                        </div>
-                    </div>
+    </main>
 
-                    <div class="control-switch">
-                        <label class="switch">
-                            <input type="checkbox" id="toggle-drone">
-                            <span class="slider round"></span>
-                        </label>
-                        <div class="switch-label">
-                            <span class="title">Drones com IA e Sensores de Solo</span>
-                            <span class="desc">Identifica pragas localizadas e economiza água.</span>
-                        </div>
-                    </div>
+    <footer class="main-footer">
+        <p>Projeto Desenvolvido para o Programa Agrinho 2026</p>
+    </footer>
 
-                    <div class="control-switch">
-                        <label class="switch">
-                            <input type="checkbox" id="toggle-reflorest">
-                            <span class="slider round"></span>
-                        </label>
-                        <div class="switch-label">
-                            <span class="title">Reflorestamento de APP (Áreas de Preservação)</span>
-                            <span class="desc">Aumenta a biodiversidade e retém carbono.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Painel de Resultados da Simulação -->
-                <div class="results-display">
-                    <div class="result-box">
-                        <h4>Impacto Ecológico</h4>
-                        <div class="progress-bar">
-                            <div id="eco-progress" class="progress-fill" style="width: 40%;"></div>
-                        </div>
-                        <span id="eco-score-text">40% Ecológico</span>
-                    </div>
-                    <div class="result-box">
-                        <h4>Economia Mensal Estimada</h4>
-                        <span id="money-saved" class="money-text">R$ 1.200,00</span>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
