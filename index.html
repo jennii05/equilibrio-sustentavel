@@ -3,43 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Agrinho: Futuro Sustentável</title>
+    <title>Agrinho: O Futuro do Agro Sustentável</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Ícones para dar acabamento visual profissional -->
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
 
-    <main class="game-container">
-        <!-- Placar e Progresso -->
-        <header class="game-header">
-            <div class="progress">Pergunta <span id="current-question">1</span> de <span id="total-questions">4</span></div>
-            <div class="score">Pontos: <span id="score-val">0</span></div>
-        </header>
+    <!-- Menu de Navegação Superior -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <i class="fa-solid fa-leaf"></i> Agro<span>Sustentável</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre o Agro</a></li>
+            <li><a href="#duvidas">Dúvidas Frequentes</a></li>
+        </ul>
+    </nav>
 
-        <!-- Caixa da Pergunta Atual -->
-        <section class="card-quiz">
-            <h2 id="question-text">Carregando pergunta...</h2>
-            
-            <!-- Botões das Alternativas de Resposta -->
-            <div class="options-container" id="options-box">
-                <!-- O JavaScript vai injetar as opções aqui dentro -->
+    <!-- Seção de Abertura (Banner) -->
+    <header id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1>Tecnologia e Natureza Conectadas</h1>
+            <p>Descubra como as inovações digitais estão transformando o campo e garantindo o alimento das próximas gerações com respeito ao meio ambiente.</p>
+            <a href="#duvidas" class="btn-primary">Saiba Mais <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+    </header>
+
+    <!-- Seção sobre o Agronegócio Moderno -->
+    <section id="sobre" class="about-section">
+        <h2>O Novo Agronegócio</h2>
+        <p class="section-subtitle">A união entre produtividade e preservação ambiental.</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-droplet text-green"></i>
+                <h3>Uso da Água</h3>
+                <p>Sensores inteligentes medem a umidade exata do solo para que nenhuma gota de água seja desperdiçada na irrigação.</p>
             </div>
-        </section>
+            <div class="feature-card">
+                <i class="fa-solid fa-solar-panel text-green"></i>
+                <h3>Energia Limpa</h3>
+                <p>Fazendas modernas geram a própria eletricidade através de painéis solares e do reaproveitamento de biomassa.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-seedling text-green"></i>
+                <h3>Proteção do Solo</h3>
+                <p>O plantio direto e a rotação de culturas evitam a erosão e mantêm a terra fértil por muito mais tempo.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Controle de Próxima -->
-        <footer class="game-footer">
-            <button id="next-btn" class="btn-next hide">Próxima Pergunta <i class="fa-solid fa-arrow-right"></i></button>
-        </footer>
-    </main>
+    <!-- Seção Interativa de Perguntas e Respostas (O que você pediu) -->
+    <section id="duvidas" class="faq-section">
+        <h2>Dúvidas Frequentes</h2>
+        <p class="section-subtitle">Clique sobre qualquer pergunta para expandir e ler a resposta detalhada.</p>
 
-    <!-- Tela de Fim de Jogo (Oculta até o final) -->
-    <div id="end-screen" class="end-container hide">
-        <i class="fa-solid fa-trophy trophy-icon"></i>
-        <h2>Fim de Jogo!</h2>
-        <p>Você completou o desafio do Agrinho Sustentável.</p>
-        <div class="final-score">Pontuação Final: <span id="final-score-val">0</span></div>
-        <button id="restart-btn" class="btn-restart"><i class="fa-solid fa-rotate-left"></i> Jogar Novamente</button>
-    </div>
+        <div class="faq-container">
+            <!-- Item 1 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Como a tecnologia ajuda a reduzir o uso de defensivos químicos?</span>
+                    <i class="fa-solid fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Através do uso de drones com inteligência artificial e câmeras especiais. Os drones sobrevoam a plantação e mapeiam exatamente onde estão os focos de pragas ou doenças. Com isso, o produtor aplica o produto de forma localizada apenas nas plantas afetadas, reduzindo drasticamente o uso geral de insumos no campo.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>O que é a Agricultura de Precisão e qual o seu impacto?</span>
+                    <i class="fa-solid fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>É um sistema de gerenciamento que utiliza dados coletados por GPS, tratores autônomos e satélites para entender as variações do solo em cada pedaço da propriedade. O impacto é uma lavoura muito mais eficiente, que produz mais alimentos usando menos recursos naturais e espaço de terra.</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Qual o papel do Programa Agrinho no futuro do campo?</span>
+                    <i class="fa-solid fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>O Programa Agrinho atua na educação e conscientização de crianças e jovens, levando temas como cidadania, ética e sustentabilidade para a sala de aula. Ele prepara as novas gerações para pensar em soluções criativas, conectando o conhecimento escolar com a realidade prática e tecnológica do agronegócio sustentável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé Institucional -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Projeto Agrinho - Sustentabilidade no Agro. Todos os direitos reservados.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
