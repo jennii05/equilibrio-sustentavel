@@ -3,72 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho: Futuro Sustentável</title>
+    <title>Quiz Agrinho: Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ícones para deixar os botões bonitos -->
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="logo">
-            <i class="fa-solid fa-seedling"></i>
-            <h1>Agrinho <span>Sustentável</span></h1>
-        </div>
-        <p>Clique nas dúvidas abaixo para descobrir como a tecnologia transforma o campo!</p>
-    </header>
+    <main class="game-container">
+        <!-- Placar e Progresso -->
+        <header class="game-header">
+            <div class="progress">Pergunta <span id="current-question">1</span> de <span id="total-questions">4</span></div>
+            <div class="score">Pontos: <span id="score-val">0</span></div>
+        </header>
 
-    <main class="quiz-container">
-        
-        <!-- Pergunta 1 -->
-        <div class="quiz-item">
-            <button class="quiz-question">
-                <span>O que é a agricultura digital e como ela ajuda o planeta?</span>
-                <i class="fa-solid fa-chevron-down arrow-icon"></i>
-            </button>
-            <div class="quiz-answer">
-                <p>É o uso de tecnologia (como sensores e aplicativos) no campo. Ela ajuda o planeta porque mostra ao produtor a quantidade exata de água e adubo que a planta precisa, evitando desperdícios e protegendo o solo!</p>
+        <!-- Caixa da Pergunta Atual -->
+        <section class="card-quiz">
+            <h2 id="question-text">Carregando pergunta...</h2>
+            
+            <!-- Botões das Alternativas de Resposta -->
+            <div class="options-container" id="options-box">
+                <!-- O JavaScript vai injetar as opções aqui dentro -->
             </div>
-        </div>
+        </section>
 
-        <!-- Pergunta 2 -->
-        <div class="quiz-item">
-            <button class="quiz-question">
-                <span>Como os drones podem salvar plantações de forma ecológica?</span>
-                <i class="fa-solid fa-chevron-down arrow-icon"></i>
-            </button>
-            <div class="quiz-answer">
-                <p>Os drones sobrevoam a fazenda e tiram fotos especiais com inteligência artificial. Eles encontram exatamente onde estão as pragas. Assim, o agricultor aplica remédio apenas naquela plantinha doente, e não na fazenda inteira!</p>
-            </div>
-        </div>
-
-        <!-- Pergunta 3 -->
-        <div class="quiz-item">
-            <button class="quiz-question">
-                <span>De onde vem a energia limpa usada nas fazendas do futuro?</span>
-                <i class="fa-solid fa-chevron-down arrow-icon"></i>
-            </button>
-            <div class="quiz-answer">
-                <p>Elas usam principalmente a energia do sol (placas solares) e o biogás, que é feito a partir do reaproveitamento de restos de plantas e esterco de animais. É energia infinita que não polui!</p>
-            </div>
-        </div>
-
-        <!-- Pergunta 4 -->
-        <div class="quiz-item">
-            <button class="quiz-question">
-                <span>O que são os créditos de carbono no agronegócio?</span>
-                <i class="fa-solid fa-chevron-down arrow-icon"></i>
-            </button>
-            <div class="quiz-answer">
-                <p>Quando uma fazenda planta árvores ou cuida bem da floresta, ela ajuda a limpar o ar do planeta. Essa boa ação vira um "crédito de carbono", que pode ser vendido para empresas do mundo todo, gerando lucro sustentável.</p>
-            </div>
-        </div>
-
+        <!-- Controle de Próxima -->
+        <footer class="game-footer">
+            <button id="next-btn" class="btn-next hide">Próxima Pergunta <i class="fa-solid fa-arrow-right"></i></button>
+        </footer>
     </main>
 
-    <footer class="main-footer">
-        <p>Projeto Desenvolvido para o Programa Agrinho 2026</p>
-    </footer>
+    <!-- Tela de Fim de Jogo (Oculta até o final) -->
+    <div id="end-screen" class="end-container hide">
+        <i class="fa-solid fa-trophy trophy-icon"></i>
+        <h2>Fim de Jogo!</h2>
+        <p>Você completou o desafio do Agrinho Sustentável.</p>
+        <div class="final-score">Pontuação Final: <span id="final-score-val">0</span></div>
+        <button id="restart-btn" class="btn-restart"><i class="fa-solid fa-rotate-left"></i> Jogar Novamente</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
