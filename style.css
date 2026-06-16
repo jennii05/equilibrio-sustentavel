@@ -1,126 +1,213 @@
-// Banco de dados de perguntas do Quiz
-const quizData = [
-    {
-        question: "Como os drones ajudam a proteger as plantações de forma sustentável?",
-        options: [
-            "Jogando água em toda a fazenda ao mesmo tempo.",
-            "Tirando fotos com IA para aplicar remédio apenas na planta que está doente.",
-            "Espantando os passarinhos para longe da plantação."
-        ],
-        correct: 1 // Índice da resposta certa (começa em 0)
-    },
-    {
-        question: "Qual é a principal vantagem da energia solar para o produtor rural?",
-        options: [
-            "Ela faz as plantas crescerem duas vezes mais rápido.",
-            "Substitui a energia elétrica poluente por uma limpa e infinita vinda do Sol.",
-            "Serve para iluminar a fazenda somente durante o dia."
-        ],
-        correct: 1
-    },
-    {
-        question: "O que acontece quando o agricultor usa sensores de umidade no solo?",
-        options: [
-            "Ele economiza muita água, pois irriga apenas quando a terra realmente precisa.",
-            "O solo fica mudando de cor de acordo com a temperatura.",
-            "As plantas ganham raízes automáticas."
-        ],
-        correct: 0
-    },
-    {
-        question: "De onde vem o biogás utilizado como combustível ecológico no campo?",
-        options: [
-            "Da fumaça gerada pelos tratores antigos.",
-            "Do reaproveitamento de restos de vegetais e do esterco dos animais.",
-            "Das nuvens de chuva acumuladas."
-        ],
-        correct: 1
-    }
-];
-
-let currentQuestionIndex = 0;
-let score = 0;
-
-// Elementos DOM
-const gameContainer = document.querySelector('.game-container');
-const questionText = document.getElementById('question-text');
-const optionsBox = document.getElementById('options-box');
-const currentQuestionEl = document.getElementById('current-question');
-const totalQuestionsEl = document.getElementById('total-questions');
-const scoreVal = document.getElementById('score-val');
-const nextBtn = document.getElementById('next-btn');
-const endScreen = document.getElementById('end-screen');
-const finalScoreVal = document.getElementById('final-score-val');
-const restartBtn = document.getElementById('restart-btn');
-
-function startQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    scoreVal.textContent = score;
-    totalQuestionsEl.textContent = quizData.length;
-    endScreen.classList.add('hide');
-    gameContainer.classList.remove('hide');
-    showQuestion();
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links do menu */
 }
 
-function showQuestion() {
-    resetState();
-    let currentQuestion = quizData[currentQuestionIndex];
-    currentQuestionEl.textContent = currentQuestionIndex + 1;
-    questionText.textContent = currentQuestion.question;
-
-    // Criar os botões de resposta na tela
-    currentQuestion.options.forEach((option, index) => {
-        const button = document.createElement('button');
-        button.textContent = option;
-        button.classList.add('option-btn');
-        button.addEventListener('click', () => selectOption(button, index));
-        optionsBox.appendChild(button);
-    });
+body {
+    background-color: #f9fbf9; /* Fundo claro e limpo */
+    color: #2d3748;
+    line-height: 1.6;
 }
 
-function resetState() {
-    nextBtn.classList.add('hide');
-    optionsBox.innerHTML = '';
+/* Menu de Navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-function selectOption(selectedButton, index) {
-    const currentQuestion = quizData[currentQuestionIndex];
-    const allButtons = optionsBox.querySelectorAll('.option-btn');
-
-    // Bloquear outros cliques após responder
-    allButtons.forEach(btn => btn.disabled = true);
-
-    // Validação de resposta certa ou errada
-    if (index === currentQuestion.correct) {
-        selectedButton.classList.add('correct');
-        score += 10;
-        scoreVal.textContent = score;
-    } else {
-        selectedButton.classList.add('wrong');
-        // Mostrar qual era a certa para ensinar o usuário
-        allButtons[currentQuestion.correct].classList.add('correct');
-    }
-
-    nextBtn.classList.remove('hide');
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1b4d3e;
 }
 
-nextBtn.addEventListener('click', () => {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizData.length) {
-        showQuestion();
-    } else {
-        showEndScreen();
-    }
-});
+.nav-logo i { color: #27ae60; }
+.nav-logo span { color: #27ae60; }
 
-function showEndScreen() {
-    gameContainer.classList.add('hide');
-    endScreen.classList.remove('hide');
-    finalScoreVal.textContent = score;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
 }
 
-restartBtn.addEventListener('click', startQuiz);
+.nav-links a {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    transition: color 0.2s;
+}
 
-// Iniciar o jogo automaticamente na tela
-startQuiz();
+.nav-links a:hover { color: #27ae60; }
+
+/* Banner Inicial (Hero) */
+.hero-section {
+    background: linear-gradient(rgba(27, 77, 62, 0.7), rgba(27, 77, 62, 0.9)), url('https://unsplash.com') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.hero-content max-width { max-width: 800px; }
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    background-color: #27ae60;
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background 0.2s;
+    display: inline-block;
+}
+
+.btn-primary:hover { background-color: #219653; }
+
+/* Seções Gerais */
+.about-section, .faq-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #1b4d3e;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #718096;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+/* Grid de Recursos (Cards) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s;
+}
+
+.feature-card:hover { transform: translateY(-5px); }
+
+.feature-card i {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.text-green { color: #27ae60; }
+
+/* Seção Interativa de Perguntas (FAQ Accordion) */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1b4d3e;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.faq-question:hover { background-color: #f4faf6; }
+
+.faq-icon {
+    font-size: 1rem;
+    color: #27ae60;
+    transition: transform 0.3s ease;
+}
+
+/* Área de Resposta Animada */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #fafdfb;
+}
+
+.faq-answer p {
+    padding: 0 30px 25px 30px;
+    color: #4a5568;
+    font-size: 1rem;
+}
+
+/* Classes ativadas pelo JavaScript */
+.faq-item.active .faq-icon {
+    transform: rotate(45deg); /* Transforma o "+" em um "x" */
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px; /* Expande suavemente revelando o texto */
+}
+
+/* Rodapé */
+.site-footer {
+    background-color: #1b4d3e;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Ajuste Responsivo para Celular */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .about-section, .faq-section { padding: 50px 20px; }
+}
