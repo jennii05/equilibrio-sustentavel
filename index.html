@@ -4,214 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgroSustentável | Futuro Verde</title>
-    <style>
-        /* Cores Base: Verde e Preto */
-        :root {
-            --bg-principal: #0d1117;
-            --bg-card: #161b22;
-            --verde-neon: #00ff66;
-            --verde-escuro: #00aa44;
-            --texto-claro: #f0f6fc;
-            --texto-cinza: #8b949e;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-principal);
-            color: var(--texto-claro);
-            line-height: 1.6;
-        }
-
-        /* Cabeçalho */
-        header {
-            background: linear-gradient(135deg, #000000, #051e0f);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 2px solid var(--verde-neon);
-        }
-
-        header h1 {
-            color: var(--verde-neon);
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            color: var(--texto-cinza);
-            font-size: 1.2rem;
-        }
-
-        /* Container Principal */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Seções Longas de Conteúdo */
-        section {
-            margin-bottom: 60px;
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #30363d;
-        }
-
-        h2 {
-            color: var(--verde-neon);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            border-left: 5px solid var(--verde-escuro);
-            padding-left: 15px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            color: var(--texto-claro);
-        }
-
-        .destaque {
-            color: var(--verde-neon);
-            font-weight: bold;
-        }
-
-        /* Sanfona Interativa (Perguntas e Respostas) */
-        .faq-item {
-            margin-bottom: 15px;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .faq-pergunta {
-            background-color: #21262d;
-            color: var(--texto-claro);
-            padding: 20px;
-            width: 100%;
-            text-align: left;
-            border: none;
-            outline: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s;
-        }
-
-        .faq-pergunta:hover {
-            background-color: #30363d;
-            color: var(--verde-neon);
-        }
-
-        .faq-pergunta::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: var(--verde-neon);
-        }
-
-        .faq-item.ativo .faq-pergunta::after {
-            content: '−';
-        }
-
-        .faq-resposta {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: #161b22;
-        }
-
-        .faq-resposta p {
-            padding: 20px;
-            margin: 0;
-            color: var(--texto-cinza);
-        }
-
-        /* Calculadora do Agro */
-        .calc-box {
-            background-color: #21262d;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid var(--verde-escuro);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: var(--texto-claro);
-        }
-
-        input, select {
-            width: 100%;
-            padding: 12px;
-            background-color: var(--bg-principal);
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            color: var(--texto-claro);
-            font-size: 1rem;
-        }
-
-        input:focus, select:focus {
-            border-color: var(--verde-neon);
-            outline: none;
-        }
-
-        button.btn-calc {
-            background-color: var(--verde-escuro);
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
-            text-transform: uppercase;
-        }
-
-        button.btn-calc:hover {
-            background-color: var(--verde-neon);
-            color: #000;
-        }
-
-        .resultado {
-            margin-top: 25px;
-            padding: 20px;
-            background-color: var(--bg-principal);
-            border-radius: 6px;
-            border-left: 5px solid var(--verde-neon);
-            display: none;
-        }
-
-        .resultado h3 {
-            color: var(--verde-neon);
-            margin-bottom: 10px;
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: var(--texto-cinza);
-            border-top: 1px solid #30363d;
-            font-size: 0.9rem;
-        }
-    </style>
+    <!-- Esta linha conecta o HTML ao seu arquivo de estilo externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -288,3 +82,76 @@
             <div class="faq-item">
                 <button class="faq-pergunta">O que é o Mercado de Crédito de Carbono no Agro?</button>
                 <div class="faq-resposta">
+                    <p>Propriedades que adotam florestas integradas ou plantio direto conseguem reter o gás carbônico no solo e nas plantas. Esse "sequestro de carbono" gera créditos regulamentados que podem ser vendidos para grandes indústrias globais, gerando uma nova fonte de renda ao fazendeiro.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta">Como começar a transição na minha propriedade rural?</button>
+                <div class="faq-resposta">
+                    <p>O primeiro passo é fazer a análise técnica do solo e mapear as fontes de água. Comece implementando a rotação de culturas em uma pequena parte da propriedade e substitua gradativamente os defensivos químicos por defensivos biológicos.</p>
+                </div>
+            </div>
+        </div>
+
+    <footer>
+        <p>&copy; 2026 AgroSustentável Hub. Criado para o Futuro do Campo.</p>
+    </footer>
+
+    <script>
+        /* Lógica das Perguntas Interativas (FAQ) */
+        const perguntas = document.querySelectorAll('.faq-pergunta');
+
+        perguntas.forEach(pergunta => {
+            pergunta.addEventListener('click', () => {
+                const item = pergunta.parentElement;
+                const resposta = item.querySelector('.faq-resposta');
+
+                document.querySelectorAll('.faq-item').forEach(outroItem => {
+                    if (outroItem !== item) {
+                        outroItem.classList.remove('ativo');
+                        outroItem.querySelector('.faq-resposta').style.maxHeight = null;
+                    }
+                });
+
+                item.classList.toggle('ativo');
+                if (item.classList.contains('ativo')) {
+                    resposta.style.maxHeight = resposta.scrollHeight + "px";
+                } else {
+                    resposta.style.maxHeight = null;
+                }
+            });
+        });
+
+        /* Lógica da Calculadora do Agro */
+        function calcularImpacto() {
+            const tamanho = parseFloat(document.getElementById('tamanho').value);
+            const manejo = document.getElementById('manejo').value;
+            const painel = document.getElementById('painel-resultado');
+            const texto = document.getElementById('res-texto');
+
+            if (!tamanho || tamanho <= 0) {
+                alert("Por favor, insira um tamanho válido de hectares.");
+                return;
+            }
+
+            let carbonoRetido = 0;
+            let status = "";
+
+            if (manejo === "tradicional") {
+                carbonoRetido = tamanho * 0.2; 
+                status = "⚠️ **Alerta:** Seu modelo atual possui alto risco de esgotamento de solo. Mudar para o plantio direto pode reduzir seus custos de insumos em até 30%.";
+            } else if (manejo === "direto") {
+                carbonoRetido = tamanho * 1.5;
+                status = "✅ **Bom Trabalho!** Suas práticas retêm cerca de " + carbonoRetido.toFixed(1) + " toneladas de CO₂ por ano e protegem a estrutura biológica do seu solo.";
+            } else if (manejo === "sustentavel") {
+                carbonoRetido = tamanho * 4.2;
+                status = "🌱 **Excelente!** Sua propriedade é um modelo de vanguarda. Estimamos uma retenção de aproximadamente " + carbonoRetido.toFixed(1) + " toneladas de CO₂ ao ano. Você está elegível para programas premium de Crédito de Carbono.";
+            }
+
+            texto.innerHTML = status;
+            painel.style.display = "block";
+        }
+    </script>
+</body>
+</html>
