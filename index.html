@@ -12,6 +12,8 @@
             --verde-escuro: #00aa44;
             --texto-claro: #f0f6fc;
             --texto-cinza: #8b949e;
+            --vermelho-alerta: #ff4444;
+            --amarelo-alerta: #ffbb33;
         }
 
         * {
@@ -79,7 +81,7 @@
             font-weight: bold;
         }
 
-        /* Estrutura Nativa do FAQ (Funciona sem erros de clique) */
+        /* Estrutura Nativa do FAQ */
         details {
             background-color: #21262d;
             border: 1px solid #30363d;
@@ -98,6 +100,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
         }
 
         summary:hover {
@@ -220,7 +226,6 @@
             <p><strong>3. Integração Lavoura-Pecuária-Floresta (ILPF):</strong> Estratégia que combina produção agrícola, pecuária e árvores na mesma área. Isso melhora o bem-estar animal e captura muito mais carbono da atmosfera.</p>
         </section>
 
-        <!-- CALCULADORA CORRIGIDA -->
         <section>
             <h2>Calculadora Ecológica do Produtor</h2>
             <p>Simule a estimativa de impacto ecológico e eficiência da sua propriedade rural com base na área e manejo.</p>
@@ -249,32 +254,41 @@
             </div>
         </section>
 
-        <!-- FAQ INTERATIVO CORRIGIDO (NATIVO SEM ERROS) -->
         <section>
             <h2>Perguntas Frequentes (FAQ)</h2>
             <p>Clique sobre as perguntas para expandir e ler as respostas detalhadas.</p>
 
             <details>
-                <summary>O agro sustentável é mais caro para o produtor?</summary>
+                <summary>A transição para o agro sustentável é muito cara?</summary>
                 <div class="faq-conteudo">
-                    <p>No início, a transição exige investimentos em tecnologia e capacitação. Porém, a médio e longo prazo, ele reduz drasticamente os custos com fertilizantes químicos, defensivos e água, tornando a fazenda muito mais lucrativa e resiliente a crises climáticas.</p>
+                    <p>O investimento inicial em tecnologias como sensores e sementes preparadas pode ser alto, mas o retorno financeiro ocorre a médio prazo através da economia de água, menor uso de defensivos químicos e valorização da terra no mercado global.</p>
                 </div>
             </details>
 
             <details>
-                <summary>Como a tecnologia ajuda a economizar água na lavoura?</summary>
+                <summary>O que significa a sigla ILPF?</summary>
                 <div class="faq-conteudo">
-                    <p>Através de sensores enterrados no solo e imagens de satélite, o produtor sabe exatamente quais áreas precisam de água e qual a quantidade exata. Sistemas modernos como a irrigação gota a gota evitam a evaporação desperdiçada.</p>
+                    <p>Significa Integração Lavoura-Pecuária-Floresta. É uma estratégia de produção que integra atividades agrícolas, pecuárias e florestais em uma mesma área, gerando benefícios mútuos para o solo, animais e plantas.</p>
                 </div>
             </details>
 
             <details>
-                <summary>O que é o Mercado de Crédito de Carbono no Agro?</summary>
+                <summary>Como a tecnologia ajuda a economizar água?</summary>
                 <div class="faq-conteudo">
-                    <p>Propriedades que adotam florestas integradas ou plantio direto conseguem reter o gás carbônico no solo e nas plantas. Esse "sequestro de carbono" gera créditos regulamentados que podem ser vendidos para grandes indústrias globais, gerando uma nova fonte de renda ao fazendeiro.</p>
+                    <p>Sensores instalados diretamente no campo medem o índice de umidade do solo em tempo real. Esses dados alimentam sistemas de irrigação automatizados, que liberam água em gotas e na quantidade precisa para cada planta, eliminando o desperdício comum das mangueiras e pivôs convencionais.</p>
                 </div>
             </details>
+        </section>
 
-            <details>
-                <summary>Como começar a transição na minha propriedade rural?</summary>
-                <div class="faq-conteudo">
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AgroSustentável. Desenvolvido para um futuro mais verde.</p>
+    </footer>
+
+    <script>
+        // window.onload garante que o script só execute após a página carregar 100%
+        window.onload = function() {
+            const botao = document.getElementById('btn-calcular');
+            
+            if(botao) {
