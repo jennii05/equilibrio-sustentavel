@@ -1,23 +1,206 @@
-/* Procure por essa classe no seu style.css e substitua por esta versão corrigida */
-.accordion-content {
+/* Cores Base: Verde e Preto */
+:root {
+    --bg-principal: #0d1117;
+    --bg-card: #161b22;
+    --verde-neon: #00ff66;
+    --verde-escuro: #00aa44;
+    --texto-claro: #f0f6fc;
+    --texto-cinza: #8b949e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-claro);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #000000, #051e0f);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--verde-neon);
+}
+
+header h1 {
+    color: var(--verde-neon);
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: var(--texto-cinza);
+    font-size: 1.2rem;
+}
+
+/* Container Principal */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Seções Longas de Conteúdo */
+section {
+    margin-bottom: 60px;
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+}
+
+h2 {
+    color: var(--verde-neon);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-left: 5px solid var(--verde-escuro);
+    padding-left: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: var(--texto-claro);
+}
+
+.destaque {
+    color: var(--verde-neon);
+    font-weight: bold;
+}
+
+/* Sanfona Interativa (Perguntas e Respostas) */
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-pergunta {
+    background-color: #21262d;
+    color: var(--texto-claro);
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.faq-pergunta:hover {
+    background-color: #30363d;
+    color: var(--verde-neon);
+}
+
+.faq-pergunta::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--verde-neon);
+}
+
+.faq-item.ativo .faq-pergunta::after {
+    content: '−';
+}
+
+.faq-resposta {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out; /* Mudança para uma transição nativa mais limpa */
-    background-color: #fbfdfc;
+    transition: max-height 0.3s ease-out;
+    background-color: #161b22;
 }
 
-.accordion-content p {
-    padding: 20px 30px; /* Movido o padding para dentro do parágrafo */
-    color: #4a5568;
-    font-size: 1.05rem;
+.faq-resposta p {
+    padding: 20px;
+    margin: 0;
+    color: var(--texto-cinza);
 }
 
-/* Garante o efeito visual de abertura imediata ao clique */
-.accordion-item.open .arrow-icon {
-    transform: rotate(45deg);
-    color: #e74c3c; 
+/* Calculadora do Agro */
+.calc-box {
+    background-color: #21262d;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--verde-escuro);
 }
 
-.accordion-item.open .accordion-content {
-    max-height: 250px; /* Tamanho limite ideal para exibir todo o texto da resposta */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--texto-claro);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-principal);
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: var(--texto-claro);
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    border-color: var(--verde-neon);
+    outline: none;
+}
+
+button.btn-calc {
+    background-color: var(--verde-escuro);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+    text-transform: uppercase;
+}
+
+button.btn-calc:hover {
+    background-color: var(--verde-neon);
+    color: #000;
+}
+
+.resultado {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: var(--bg-principal);
+    border-radius: 6px;
+    border-left: 5px solid var(--verde-neon);
+    display: none;
+}
+
+.resultado h3 {
+    color: var(--verde-neon);
+    margin-bottom: 10px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--texto-cinza);
+    border-top: 1px solid #30363d;
+    font-size: 0.9rem;
 }
