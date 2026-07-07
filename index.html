@@ -257,25 +257,18 @@
         <section>
             <h2>Perguntas Frequentes (FAQ)</h2>
             <p>Clique sobre as perguntas para expandir e ler as respostas detalhadas.</p>
-
+            
             <details>
-                <summary>A transição para o agro sustentável é muito cara?</summary>
+                <summary>Como a tecnologia ajuda na economia de água?</summary>
                 <div class="faq-conteudo">
-                    <p>O investimento inicial em tecnologias como sensores e sementes preparadas pode ser alto, mas o retorno financeiro ocorre a médio prazo através da economia de água, menor uso de defensivos químicos e valorização da terra no mercado global.</p>
+                    Através de sensores de umidade no solo e sistemas de gotejamento automatizados, que aplicam água direto na raiz apenas quando necessário.
                 </div>
             </details>
-
+            
             <details>
-                <summary>O que significa a sigla ILPF?</summary>
+                <summary>O que é o sistema ILPF?</summary>
                 <div class="faq-conteudo">
-                    <p>Significa Integração Lavoura-Pecuária-Floresta. É uma estratégia de produção que integra atividades agrícolas, pecuárias e florestais em uma mesma área, gerando benefícios mútuos para o solo, animais e plantas.</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>Como a tecnologia ajuda a economizar água?</summary>
-                <div class="faq-conteudo">
-                    <p>Sensores instalados diretamente no campo medem o índice de umidade do solo em tempo real. Esses dados alimentam sistemas de irrigação automatizados, que liberam água em gotas e na quantidade precisa para cada planta, eliminando o desperdício comum das mangueiras e pivôs convencionais.</p>
+                    É a Integração Lavoura-Pecuária-Floresta, uma estratégia que otimiza o espaço integrando árvores, gado e plantações na mesma área rústica.
                 </div>
             </details>
         </section>
@@ -283,12 +276,23 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 AgroSustentável. Desenvolvido para um futuro mais verde.</p>
+        <p>&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // window.onload garante que o script só execute após a página carregar 100%
-        window.onload = function() {
-            const botao = document.getElementById('btn-calcular');
+        document.getElementById('btn-calcular').addEventListener('click', function() {
+            const tamanho = parseFloat(document.getElementById('tamanho').value);
+            const manejo = document.getElementById('manejo').value;
+            const painel = document.getElementById('painel-resultado');
+            const textoResultado = document.getElementById('res-texto');
+
+            if (!tamanho || tamanho <= 0) {
+                alert('Por favor, insira um tamanho válido em hectares.');
+                return;
+            }
+
+            let msg = '';
             
-            if(botao) {
+            if (manejo === 'tradicional') {
+                msg = `Sua propriedade de ${tamanho} hectares possui alto risco de esgotamento de nutrientes. Recomendamos aplicar a rotação de culturas para evitar a erosão severa do solo e reduzir gastos com fertilizantes químicos.`;
+                painel.style.borderLeftColor = 'var(--vermelho-alerta)';
