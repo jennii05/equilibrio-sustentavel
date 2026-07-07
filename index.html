@@ -128,8 +128,8 @@
             color: var(--texto-cinza);
         }
 
-        /* Painel da Calculadora */
-        .calc-box {
+        /* Painel Interativo de Crédito */
+        .simulador-box {
             background-color: #21262d;
             padding: 25px;
             border-radius: 8px;
@@ -162,7 +162,7 @@
             outline: none;
         }
 
-        .btn-calc {
+        .btn-simular {
             background-color: var(--verde-escuro);
             color: white;
             border: none;
@@ -176,12 +176,12 @@
             text-transform: uppercase;
         }
 
-        .btn-calc:hover {
+        .btn-simular:hover {
             background-color: var(--verde-neon);
             color: #000;
         }
 
-        .resultado {
+        .resultado-simulacao {
             margin-top: 25px;
             padding: 20px;
             background-color: var(--bg-principal);
@@ -190,7 +190,7 @@
             display: none;
         }
 
-        .resultado h3 {
+        .resultado-simulacao h3 {
             color: var(--verde-neon);
             margin-bottom: 10px;
         }
@@ -226,30 +226,31 @@
             <p><strong>3. Integração Lavoura-Pecuária-Floresta (ILPF):</strong> Estratégia que combina produção agrícola, pecuária e árvores na mesma área. Isso melhora o bem-estar animal e captura muito mais carbono da atmosfera.</p>
         </section>
 
+        <!-- NOVO CONTEÚDO INTERATIVO: SIMULADOR DE CRÉDITO VERDE -->
         <section>
-            <h2>Calculadora Ecológica do Produtor</h2>
-            <p>Simule a estimativa de impacto ecológico e eficiência da sua propriedade rural com base na área e manejo.</p>
+            <h2>Simulador de Crédito Verde</h2>
+            <p>Descubra as taxas estimadas e incentivos financeiros para implementar melhorias sustentáveis em sua propriedade.</p>
             
-            <div class="calc-box">
+            <div class="simulador-box">
                 <div class="form-group">
-                    <label for="tamanho">Tamanho da Propriedade (em hectares):</label>
-                    <input type="number" id="tamanho" placeholder="Ex: 50" min="1">
-                </div>
-
-                <div class="form-group">
-                    <label for="manejo">Tipo de Manejo Predominante:</label>
-                    <select id="manejo">
-                        <option value="tradicional">Convencional/Tradicional (Alto uso de químicos)</option>
-                        <option value="direto">Plantio Direto & Rotação de Culturas</option>
-                        <option value="sustentavel">Sustentável Integrado (ILPF / Orgânico)</option>
+                    <label for="projeto">Tipo de Projeto Sustentável:</label>
+                    <select id="projeto">
+                        <option value="energia">Energia Solar / Renovável no Campo</option>
+                        <option value="irrigacao">Irrigação Inteligente por Gotejamento</option>
+                        <option value="reflorestamento">Reflorestamento e Adequação Legal</option>
                     </select>
                 </div>
 
-                <button type="button" class="btn-calc" id="btn-calcular">Calcular Diagnóstico</button>
+                <div class="form-group">
+                    <label for="valor">Valor Estimado do Investimento (R$):</label>
+                    <input type="number" id="valor" placeholder="Ex: 100000" min="5000">
+                </div>
 
-                <div class="resultado" id="painel-resultado">
-                    <h3>Diagnóstico da sua Terra</h3>
-                    <p id="res-texto"></p>
+                <button type="button" class="btn-simular" id="btn-simular">Analisar Viabilidade</button>
+
+                <div class="resultado-simulacao" id="painel-credito">
+                    <h3>Proposta de Financiamento Sustentável</h3>
+                    <p id="credito-texto"></p>
                 </div>
             </div>
         </section>
@@ -279,20 +280,21 @@
         <p>&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- LÓGICA DO NOVO SIMULADOR INTERATIVO -->
     <script>
-        document.getElementById('btn-calcular').addEventListener('click', function() {
-            const tamanho = parseFloat(document.getElementById('tamanho').value);
-            const manejo = document.getElementById('manejo').value;
-            const painel = document.getElementById('painel-resultado');
-            const textoResultado = document.getElementById('res-texto');
+        document.getElementById('btn-simular').addEventListener('click', function() {
+            const projeto = document.getElementById('projeto').value;
+            const valor = parseFloat(document.getElementById('valor').value);
+            const painel = document.getElementById('painel-credito');
+            const textoResultado = document.getElementById('credito-texto');
 
-            if (!tamanho || tamanho <= 0) {
-                alert('Por favor, insira um tamanho válido em hectares.');
+            if (!valor || valor < 5000) {
+                alert('Por favor, insira um valor de investimento válido a partir de R$ 5.000.');
                 return;
             }
 
-            let msg = '';
-            
-            if (manejo === 'tradicional') {
-                msg = `Sua propriedade de ${tamanho} hectares possui alto risco de esgotamento de nutrientes. Recomendamos aplicar a rotação de culturas para evitar a erosão severa do solo e reduzir gastos com fertilizantes químicos.`;
-                painel.style.borderLeftColor = 'var(--vermelho-alerta)';
+            // Formatação de moeda brasileira
+            const valorFormatado = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            let taxaJuros = '';
+            let beneficio = '';
+
